@@ -1,13 +1,28 @@
 import React from 'react'
+import { useState } from 'react'
 
-export default function AddBookmark() {
+export default function AddBookmark({ addLink }) {
+
+    const [linkTitle, setLinkTitle] = useState('')
+    const [linkUrl, setLinkUrl] = useState('')
+
+    function handleFormSubmit(e) {
+        e.preventDefault()
+        addLink({
+            title: linkTitle,
+            url: linkUrl,
+            id: Date.now(),
+            icon: '#'
+          })
+    }
+
   return (
     <div>
          <div className='addBookmark-container'>
-            <form>
-                <div className='form border-gradient purple'>
-                    <input type='text' className='input' placeholder='Name'></input>
-                    <input type='text' className='url' placeholder='URL'></input>
+            <form onSubmit={handleFormSubmit}>
+                <div className='form'>
+                    <input type='text' className='input'  value={linkTitle} placeholder='Name' onChange={e => setLinkTitle(e.target.value)} ></input>
+                    <input type='text' className='url'  value={linkUrl} placeholder='URL' onChange={e => setLinkUrl(e.target.value)} ></input>
                     <button className='btn' aria-label='Add Bookmark' type='submit'
                     >Add Bookmark</button>
                 </div>      
