@@ -7,10 +7,14 @@ import AddBookmark from './Components/AddBookmark'
 function App() {
   const [links, setLinks] = useState([])
 
+  function addLink(link) {
+    console.log(link)
+  }
+
   return (
     <div className="App">
       <Header />
-      <AddBookmark />
+      <AddBookmark addLink={addLink}/>
     </div>
   )
 }
