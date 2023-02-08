@@ -3,6 +3,7 @@ import { useState } from 'react'
 //import components
 import Header from './Components/Header'
 import AddBookmark from './Components/AddBookmark'
+import BookmarkList from './Components/BookmarkList'
 
 function App() {
   const [links, setLinks] = useState([])
@@ -14,7 +15,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AddBookmark addLink={addLink}/>
+      <AddBookmark addLink={addLink} />
+      <BookmarkList links={links} />
     </div>
   )
 }
