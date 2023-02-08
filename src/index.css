@@ -90,3 +90,35 @@ input:focus {
   align-items: center;
   margin-top: 1rem;
 }
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0rem;
+  border: 3px solid rgb(189, 189, 189);
+  border-radius: 50px;
+  padding: 1rem;
+  width: 80vw;
+  box-shadow: 0px 10px 15px -3px rgba(38, 0, 255, 0.589);
+}
+
+.link-info-container {
+  display: flex;
+  align-content: center;
+  gap: 3rem;
+  margin-left: 2rem;
+}
+
+.edit-delete-container {
+  margin-right: 2rem;
+  display: flex;
+  gap: 1rem;
+}
