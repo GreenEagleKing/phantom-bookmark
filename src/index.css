@@ -13,6 +13,11 @@ body {
   font-size: 16px;
 }
 
+h1 {
+  color: rgba(89, 72, 167, 1);
+}
+
+/* Header */
 .header-container {
   display: flex;
   justify-content: center;
@@ -20,4 +25,61 @@ body {
   width: 100vw;
   padding: 2rem;
   box-shadow: 0px 15px 20px -15px rgb(146, 145, 145);   
+}
+
+/* Add Bookmark component */
+.addBookmark-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 2rem;
+  margin: auto;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0rem;
+  padding: 1.5rem 2rem;
+  border: 3px solid rgb(189, 189, 189);
+  border-radius: 50px;
+  box-shadow: 0px 10px 15px -3px rgba(89, 72, 167, 0.459);
+}
+
+.form:hover{
+  box-shadow: inset 0px 0px 10px 0px rgba(89, 72, 167, 0.459);
+}
+
+input {
+  font-size: large;
+  font-weight: 700;
+  padding: .5rem;
+  border-radius: 10px;
+  outline-width: 2px;
+  border-color: rgb(189, 189, 189);
+  height: 3rem;
+}
+
+input:focus {
+  outline-color: rgba(89, 72, 167, 0.459);
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: rgb(110, 110, 247);
+  color: white;
+  font-size: large;
+  font-weight: 700;
+}
+
+.btn:active {
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  background-color: rgb(67, 67, 250);
 }
