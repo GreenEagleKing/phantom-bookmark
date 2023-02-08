@@ -13,6 +13,10 @@ body {
   font-size: 16px;
 }
 
+h1 {
+  color: rgba(89, 72, 167, 1);
+}
+
 /* Header */
 .header-container {
   display: flex;
