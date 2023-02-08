@@ -3,11 +3,15 @@ import { useState } from 'react'
 
 export default function AddBookmark({ addLink }) {
 
+    // State created to keep track of inputs
     const [linkTitle, setLinkTitle] = useState('')
     const [linkUrl, setLinkUrl] = useState('')
 
+    // function runs when form is submitted
     function handleFormSubmit(e) {
+        //prevents page reload
         e.preventDefault()
+        // runs addLink function and passes in new data
         addLink({
             title: linkTitle,
             url: linkUrl,
