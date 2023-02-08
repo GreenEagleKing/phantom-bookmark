@@ -7,13 +7,13 @@ import { PencilSquareIcon } from '@heroicons/react/24/solid'
 export default function Bookmark({ link }) {
   return (
     <>
-        <div className='link-container'>
-            <div className='link-info-container'>
-            {/* favicon img from website*/}
-            <img height="24" width="24" src={link.icon}  />
+        <div className='link-container grow'>
+            <div className='link-info-container '>
             {/* bookmark title wrapped in a link tag */}
-                <a href={link.url} target='_blank'>
-                <div>{link.title}</div>
+                <a href={link.url} target='_blank' className='link-title'>
+                    {/* favicon img from website*/}
+                    <img height="24" width="24" src={link.icon}  />
+                    <div >{link.title}</div>
                 </a>
             </div>
             
