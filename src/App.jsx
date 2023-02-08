@@ -1,11 +1,14 @@
 import { useState } from 'react'
 
+//import components
+import Header from './Components/Header'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [links, setLinks] = useState([])
 
   return (
     <div className="App">
-      Hello Phantom
+      <Header />
     </div>
   )
 }
