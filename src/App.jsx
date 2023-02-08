@@ -9,6 +9,12 @@ function App() {
   const [links, setLinks] = useState([])
 
   function addLink(link) {
+    setLinks(prevState => [...prevState, {
+      id: link.id,
+      title: link.title,
+      url: link.url,
+      icon: link.icon
+    }])
     console.log(link)
   }
 
