@@ -1,5 +1,9 @@
 import React from 'react'
 
+//import icons from heroIcons
+import { TrashIcon } from '@heroicons/react/24/solid'
+import { PencilSquareIcon } from '@heroicons/react/24/solid'
+
 export default function Bookmark({ link }) {
   return (
     <>
@@ -17,11 +21,11 @@ export default function Bookmark({ link }) {
             <div className='edit-delete-container'>
                 <button 
                 className='btn link edit'>
-                    Edit
+                    <PencilSquareIcon width={24} height={24}/>
                 </button>
                 <button 
                 className='btn link trash'>
-                    trash
+                    <TrashIcon width={24} height={24}/>
                 </button>
             </div>
         </div>
