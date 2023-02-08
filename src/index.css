@@ -39,6 +39,8 @@ h1 {
 
 .form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   margin: 2rem 0rem;
   padding: 1.5rem 2rem;
@@ -51,8 +53,6 @@ h1 {
   box-shadow: inset 0px 0px 10px 0px rgba(89, 72, 167, 0.459);
 }
 
-
-
 input {
   font-size: large;
   font-weight: 700;
@@ -60,6 +60,7 @@ input {
   border-radius: 10px;
   outline-width: 2px;
   border-color: rgb(189, 189, 189);
+  height: 3rem;
 }
 
 input:focus {
