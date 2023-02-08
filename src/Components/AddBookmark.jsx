@@ -16,7 +16,7 @@ export default function AddBookmark({ addLink }) {
             title: linkTitle,
             url: linkUrl,
             id: Date.now(),
-            icon: '#'
+            icon: `http://www.google.com/s2/favicons?domain=${linkUrl}`
           })
     }
 

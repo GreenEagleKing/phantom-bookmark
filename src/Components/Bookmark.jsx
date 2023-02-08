@@ -9,8 +9,8 @@ export default function Bookmark({ link }) {
     <>
         <div className='link-container'>
             <div className='link-info-container'>
-            {/* will contain favicon img */}
-            <img />
+            {/* favicon img from website*/}
+            <img height="24" width="24" src={link.icon}  />
             {/* bookmark title wrapped in a link tag */}
                 <a href={link.url} target='_blank'>
                 <div>{link.title}</div>
