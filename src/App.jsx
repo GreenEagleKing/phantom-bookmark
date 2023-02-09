@@ -13,14 +13,50 @@ function App() {
   const [editedLink, setEditedLink] = useState(null)
 
   // Add new link to link state array
+  // function addLink(link) {
+  //   setLinks(prevState => [...prevState, {
+  //     id: link.id,
+  //     title: link.title,
+  //     url: link.url,
+  //     icon: link.icon
+  //   }])
+  //   console.log(link)
+  // }
+
+  window.onload = function() {
+    window.open('https://cors-anywhere.herokuapp.com/corsdemo')
+  }
+
   function addLink(link) {
-    setLinks(prevState => [...prevState, {
-      id: link.id,
-      title: link.title,
-      url: link.url,
-      icon: link.icon
-    }])
-    console.log(link)
+    const url = link.url
+    const corsUrl = `https://cors-anywhere.herokuapp.com/${url}`
+
+    if (url.slice(0,7) === 'http://' || url.slice(0,8) === 'https://') {
+      console.log('Valid')
+
+      fetch(corsUrl)
+        .then(res => {
+          if (res.ok) {
+            setLinks(prevState => [...prevState, {
+              id: link.id,
+              title: link.title,
+              url: link.url,
+              icon: link.icon
+            }])
+            console.log(link)
+            return res.json();
+          }
+          alert("URL does not exist. Please check URL is correct or check popup cors policy is accepted")
+      })
+      .catch(error => {
+        console.log(error)
+        // const syntaxError = error.toString().slice(0,12)
+        // syntaxError === 'SyntaxError:' ? console.log('Cors syntax error') : alert("URL does not exist. Please check URL is correct")
+      })
+
+    } else {
+      alert("URL does not exist. Please check URL is correct or check popup cors policy is accepted")
+    }
   }
 
   // Delete individual link
