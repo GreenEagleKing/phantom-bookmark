@@ -1,12 +1,15 @@
 import { useState } from 'react'
 
+//import custom hook
+import useLocalStorage from './assets/hooks/useLocalStorage'
+
 //import components
 import Header from './Components/Header'
 import AddBookmark from './Components/AddBookmark'
 import BookmarkList from './Components/BookmarkList'
 
 function App() {
-  const [links, setLinks] = useState([])
+  const [links, setLinks] = useLocalStorage('bookmarks', [])
   const [editedLink, setEditedLink] = useState(null)
 
   // Add new link to link state array
@@ -48,10 +51,7 @@ function App() {
   
   return (
     <div className="App">
-      <Header />
-      <AddBookmark 
-        addLink={addLink} 
-      />
+      <Header addLink={addLink}/>
       <BookmarkList 
         links={links}
         deleteLink={deleteLink}
