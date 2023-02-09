@@ -6,7 +6,7 @@ Developed for the Phantom Frontend Developer test.
 
 # [Link to App](https://benkingbookmarkphantom.netlify.app/)
 
-# [Link to Technical Design Document](https://drive.google.com/file/d/1bdjJ55uZxVF2OskwUnN_LBIcMq9OMwqA/view?usp=sharing)
+# [Link to Technical Design Document](https://drive.google.com/file/d/1AaTWFqnYBqwBF6ut_IlzbUGIOeKJs12L/view?usp=sharing)
 
 
 ## Brief:
