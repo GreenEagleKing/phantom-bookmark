@@ -24,7 +24,7 @@ function App() {
   // }
 
   window.onload = function() {
-    window.open('https://cors-anywhere.herokuapp.com/corsdemo')
+    window.open('https://cors-anywhere.herokuapp.com/corsdemo','','width=400,height=250')
   }
 
   function addLink(link) {
