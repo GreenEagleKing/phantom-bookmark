@@ -4,7 +4,7 @@ import React from 'react'
 import { TrashIcon } from '@heroicons/react/24/solid'
 import { PencilSquareIcon } from '@heroicons/react/24/solid'
 
-export default function Bookmark({ link }) {
+export default function Bookmark({ link, deleteLink }) {
   return (
     <>
         <div className='link-container grow'>
@@ -24,7 +24,8 @@ export default function Bookmark({ link }) {
                     <PencilSquareIcon width={24} height={24}/>
                 </button>
                 <button 
-                className='btn link trash'>
+                className='btn link trash'
+                onClick={() => deleteLink(link.id) }>
                     <TrashIcon width={24} height={24}/>
                 </button>
             </div>

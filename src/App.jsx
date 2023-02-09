@@ -8,6 +8,7 @@ import BookmarkList from './Components/BookmarkList'
 function App() {
   const [links, setLinks] = useState([])
 
+  // Add new link to link state array
   function addLink(link) {
     setLinks(prevState => [...prevState, {
       id: link.id,
@@ -18,11 +19,17 @@ function App() {
     console.log(link)
   }
 
+  // Delete individual link
+  function deleteLink(id) {
+    setLinks(prevState => prevState.filter(link => id !== link.id))
+  }
+  
+
   return (
     <div className="App">
       <Header />
       <AddBookmark addLink={addLink} />
-      <BookmarkList links={links} />
+      <BookmarkList links={links} deleteLink={deleteLink}/>
     </div>
   )
 }
