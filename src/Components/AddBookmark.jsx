@@ -22,7 +22,7 @@ export default function AddBookmark({ addLink }) {
 
   return (
     <div>
-         <div className='addBookmark-container grow'>
+         <div className='addBookmark-container'>
             <form onSubmit={handleFormSubmit}>
                 <div className='form'>
                     <input type='text' className='input'  value={linkTitle} placeholder='Name' onChange={e => setLinkTitle(e.target.value)} ></input>

@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function Header() {
+//import component
+import AddBookmark from './AddBookmark'
+
+export default function Header({ addLink }) {
   return (
     <div className='header-container'>
             <h1>Bookmark Library</h1>
+            <AddBookmark addLink={addLink}/>
     </div>
   )
 }
