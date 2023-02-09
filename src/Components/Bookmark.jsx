@@ -1,34 +1,45 @@
 import React from 'react'
 
+//import component
+import UpdateBookmark from './UpdateBookmark'
+
 //import icons from heroIcons
 import { TrashIcon } from '@heroicons/react/24/solid'
 import { PencilSquareIcon } from '@heroicons/react/24/solid'
 
-export default function Bookmark({ link, deleteLink }) {
+export default function Bookmark({ link, deleteLink, enterEditMode, editedLink, updateLink }) {
   return (
     <>
-        <div className='link-container grow'>
-            <div className='link-info-container '>
-            {/* bookmark title wrapped in a link tag */}
-                <a href={link.url} target='_blank' className='link-title'>
-                    {/* favicon img from website*/}
-                    <img height="24" width="24" src={link.icon}  />
-                    <div >{link.title}</div>
-                </a>
+        <div>
+            {/* if edited link id is the same as link id then show update bookmark component */}
+            {editedLink === link.id ? 
+            <UpdateBookmark link={link} updateLink={updateLink}/> :
+            // if it is not the same show normal bookmark
+            <div className='link-container grow'>
+                <div className='link-info-container '>
+                {/* bookmark title wrapped in a link tag */}
+                    <a href={link.url} target='_blank' className='link-title'>
+                        {/* favicon img from website*/}
+                        <img height="24" width="24" src={link.icon}  />
+                        <div >{link.title}</div>
+                    </a>
+                </div>
+                
+                {/* edit and delete buttons */}
+                <div className='edit-delete-container'>
+                    <button 
+                    className='btn link edit'
+                    onClick={() => enterEditMode(link) }>
+                        <PencilSquareIcon width={24} height={24}/>
+                    </button>
+                    <button 
+                    className='btn link trash'
+                    onClick={() => deleteLink(link.id) }>
+                        <TrashIcon width={24} height={24}/>
+                    </button>
+                </div>
             </div>
-            
-            {/* edit and delete buttons */}
-            <div className='edit-delete-container'>
-                <button 
-                className='btn link edit'>
-                    <PencilSquareIcon width={24} height={24}/>
-                </button>
-                <button 
-                className='btn link trash'
-                onClick={() => deleteLink(link.id) }>
-                    <TrashIcon width={24} height={24}/>
-                </button>
-            </div>
+            }   
         </div>
     </>
   )

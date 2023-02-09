@@ -3,7 +3,7 @@ import React from 'react'
 // import component
 import Bookmark from './Bookmark'
 
-export default function BookmarkList({ links, deleteLink, deleteAll }) {
+export default function BookmarkList({ links, deleteLink, deleteAll, enterEditMode, editedLink, updateLink }) {
 
   return (
     <>
@@ -27,6 +27,9 @@ export default function BookmarkList({ links, deleteLink, deleteAll }) {
                                 key={link.id}
                                 link={link}
                                 deleteLink={deleteLink}
+                                enterEditMode={enterEditMode}
+                                editedLink={editedLink}
+                                updateLink={updateLink}
                             />
                     ))}
                 </ul>
