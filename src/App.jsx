@@ -34,6 +34,12 @@ function App() {
       fetch(corsUrl)
         .then(res => {
           if (res.ok) {
+            // Checks if URL already exists in bookmark array
+            if(links.some(link => link.url === url)) {
+              console.log(link)
+              alert("URL already exists in your bookmarks")
+              return
+            }
             setLinks(prevState => [...prevState, {
               id: link.id,
               title: link.title,
