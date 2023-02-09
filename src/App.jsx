@@ -23,13 +23,16 @@ function App() {
   function deleteLink(id) {
     setLinks(prevState => prevState.filter(link => id !== link.id))
   }
-  
 
+  function deleteAll() {
+    setLinks(prevState => prevState = [])
+  }
+  
   return (
     <div className="App">
       <Header />
       <AddBookmark addLink={addLink} />
-      <BookmarkList links={links} deleteLink={deleteLink}/>
+      <BookmarkList links={links} deleteLink={deleteLink} deleteAll={deleteAll}/>
     </div>
   )
 }

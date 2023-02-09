@@ -3,7 +3,7 @@ import React from 'react'
 // import component
 import Bookmark from './Bookmark'
 
-export default function BookmarkList({ links, deleteLink }) {
+export default function BookmarkList({ links, deleteLink, deleteAll }) {
 
   return (
     <>
@@ -15,6 +15,7 @@ export default function BookmarkList({ links, deleteLink }) {
             <div className='list-container'>
                 <button
                     className='btn delete-all'
+                    onClick={() => deleteAll()}
                     >Delete All
                 </button>
                 <ul className='linkList'>

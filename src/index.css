@@ -148,7 +148,7 @@ transform: scale(1.1);
   padding: 1rem;
 }
 
-.trash:hover {
+.trash:hover, .delete-all:hover {
   background-color: rgb(250, 81, 81);
 }
 
