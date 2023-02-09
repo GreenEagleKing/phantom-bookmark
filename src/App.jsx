@@ -24,8 +24,12 @@ function App() {
     setLinks(prevState => prevState.filter(link => id !== link.id))
   }
 
+  // Deletes all links
   function deleteAll() {
-    setLinks(prevState => prevState = [])
+    if (confirm("Do you really want to delete all bookmarks?")) {
+      setLinks(prevState => prevState = []);
+    }
+    
   }
   
   return (
