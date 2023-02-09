@@ -15,6 +15,7 @@ export default function BookmarkList({ links, deleteLink, deleteAll, enterEditMo
             <div className='list-container'>
                 <button
                     className='btn delete-all'
+                    aria-label='Delete All Bookmarks'
                     onClick={() => deleteAll()}
                     >Delete All
                 </button>

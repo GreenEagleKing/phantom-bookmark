@@ -22,16 +22,16 @@ export default function AddBookmark({ addLink }) {
 
   return (
     <div>
-         <div className='addBookmark-container grow'>
-            <form onSubmit={handleFormSubmit}>
-                <div className='form'>
-                    <input type='text' className='input'  value={linkTitle} placeholder='Name' onChange={e => setLinkTitle(e.target.value)} ></input>
-                    <input type='text' className='url'  value={linkUrl} placeholder='URL' onChange={e => setLinkUrl(e.target.value)} ></input>
-                    <button className='btn' aria-label='Add Bookmark' type='submit'
-                    >Add Bookmark</button>
-                </div>      
-            </form>
-        </div>
+        <form onSubmit={handleFormSubmit}>
+          <div className='addBookmark-container'>
+            <div className='form'>
+                <input type='text' className='input'  value={linkTitle} placeholder='Name' onChange={e => setLinkTitle(e.target.value)} ></input>
+                <input type='text' className='url'  value={linkUrl} placeholder='URL' onChange={e => setLinkUrl(e.target.value)} ></input>
+                <button className='btn' aria-label='Add Bookmark' type='submit'
+                >Add Bookmark</button>
+            </div>    
+            </div>  
+        </form>
     </div>
   )
 }
