@@ -151,9 +151,11 @@ h1 {
 
   .link-info-container {
     display: flex;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     gap: 3rem;
     margin-left: 2rem;
+    flex-wrap: wrap;
   }
 
   .grow { 
@@ -176,6 +178,11 @@ h1 {
 
   .link-title:hover {
     color: rgb(67, 67, 250)
+  }
+  .link-title > div {
+    display: flex;
+    align-self: center;
+    justify-self: center;
   }
 
   .edit-delete-container {
@@ -205,5 +212,77 @@ h1 {
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* Media Queries: */
+
+@media (max-width: 750px) {
+
+  .form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0rem;
+    max-height: 250px;
+    padding: 1.5rem 2rem;
+  }
+  
+  .link-info-container{
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .edit-container{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .link-container {
+    max-width: 800px;
+    min-width: min-content;
+    padding: .5rem;
+    background-color: white;
+  }
+
+  .trash, .edit{
+    padding: .5rem .5rem;
+    font-size: small;
+  }
+
+  .link-title {
+    gap: 1rem;
+    font-size: large;
+  }
+}
+
+@media (max-width: 450px) {
+
+  .link-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .link-info-container {
+    margin: 0;
+  }
+
+  .edit-delete-container {
+    margin: 0;
+  }
+
+  .form {
+    gap: 1rem;
+    margin: 2rem 0rem;
+    max-height: 250px;
+    padding: 1rem 1rem;
   }
 }

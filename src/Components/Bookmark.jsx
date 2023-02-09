@@ -26,7 +26,7 @@ export default function Bookmark({ link, deleteLink, enterEditMode, editedLink, 
                         >
                         {/* favicon img from website*/}
                         <img height="24" width="24" src={link.icon}  />
-                        <div >{link.title}</div>
+                        <div>{link.title}</div>
                     </a>
                 </div>
                 
