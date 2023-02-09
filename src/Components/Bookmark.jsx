@@ -18,7 +18,12 @@ export default function Bookmark({ link, deleteLink, enterEditMode, editedLink, 
             <div className='link-container grow load'>
                 <div className='link-info-container '>
                 {/* bookmark title wrapped in a link tag */}
-                    <a href={link.url} target='_blank' className='link-title'>
+                    <a 
+                        href={link.url}
+                        target='_blank'
+                        className='link-title'
+                        aria-label='Go to Bookmark'
+                        >
                         {/* favicon img from website*/}
                         <img height="24" width="24" src={link.icon}  />
                         <div >{link.title}</div>
@@ -29,11 +34,13 @@ export default function Bookmark({ link, deleteLink, enterEditMode, editedLink, 
                 <div className='edit-delete-container'>
                     <button 
                     className='btn link edit'
+                    aria-label='Edit Bookmark'
                     onClick={() => enterEditMode(link) }>
                         <PencilSquareIcon width={24} height={24}/>
                     </button>
                     <button 
                     className='btn link trash'
+                    aria-label='Delete Bookmark'
                     onClick={() => deleteLink(link.id) }>
                         <TrashIcon width={24} height={24}/>
                     </button>

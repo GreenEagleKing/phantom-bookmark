@@ -9,31 +9,28 @@ import AddBookmark from './Components/AddBookmark'
 import BookmarkList from './Components/BookmarkList'
 
 function App() {
+  // setting links to use the local storage custom hook to store the data
   const [links, setLinks] = useLocalStorage('bookmarks', [])
+  //holds the value of the current item being edited
   const [editedLink, setEditedLink] = useState(null)
 
-  // Add new link to link state array
-  // function addLink(link) {
-  //   setLinks(prevState => [...prevState, {
-  //     id: link.id,
-  //     title: link.title,
-  //     url: link.url,
-  //     icon: link.icon
-  //   }])
-  //   console.log(link)
-  // }
-
+  // Due to cors policy error the URL validation is being run through a proxy server - this must be accepted
   window.onload = function() {
     window.open('https://cors-anywhere.herokuapp.com/corsdemo','','width=400,height=250')
   }
 
+  // Adding new link to list, including validation
   function addLink(link) {
+
     const url = link.url
+    //setting the url variable to use cors workaround
     const corsUrl = `https://cors-anywhere.herokuapp.com/${url}`
 
+    // Checking the URL starts with http/https
     if (url.slice(0,7) === 'http://' || url.slice(0,8) === 'https://') {
       console.log('Valid')
 
+      // Fetch api checks the URL exists
       fetch(corsUrl)
         .then(res => {
           if (res.ok) {
@@ -50,8 +47,6 @@ function App() {
       })
       .catch(error => {
         console.log(error)
-        // const syntaxError = error.toString().slice(0,12)
-        // syntaxError === 'SyntaxError:' ? console.log('Cors syntax error') : alert("URL does not exist. Please check URL is correct")
       })
 
     } else {

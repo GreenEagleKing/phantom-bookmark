@@ -30,61 +30,90 @@ h1 {
   height: 20%;
 }
 
-/* Add Bookmark component */
-.addBookmark-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 2rem;
-  margin: auto;
-}
+  /* Add Bookmark component */
+  .addBookmark-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin: auto;
+  }
 
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin: 2rem 0rem;
-  max-height: 100px;
-  padding: 1.5rem 2rem;
-  border: 3px solid rgb(189, 189, 189);
-  border-radius: 50px;
-  box-shadow: 0px 10px 15px -3px rgb(146, 145, 145);
-}
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0rem;
+    max-height: 100px;
+    padding: 1.5rem 2rem;
+    border: 3px solid rgb(189, 189, 189);
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px -3px rgb(146, 145, 145);
+  }
 
-input {
-  font-size: large;
-  font-weight: 700;
-  padding: .5rem;
-  border-radius: 10px;
-  outline-width: 2px;
-  border-color: rgb(189, 189, 189);
-  height: 3rem;
-}
+  input {
+    font-size: large;
+    font-weight: 700;
+    padding: .5rem;
+    border-radius: 10px;
+    outline-width: 2px;
+    border-color: rgb(189, 189, 189);
+    height: 3rem;
+  }
 
-input:focus {
-  outline-color: rgba(89, 72, 167, 0.459);
-}
+  input:focus {
+    outline-color: rgba(89, 72, 167, 0.459);
+  }
 
-.btn {
-  padding: .75rem 1rem;
-  border-radius: 10px;
-  background-color: rgb(110, 110, 247);
-  color: white;
-  font-size: large;
-  font-weight: 700;
-  border-width: 0px;
-}
+/* Button styling */
+  .btn {
+    padding: .75rem 1rem;
+    border-radius: 10px;
+    background-color: rgb(110, 110, 247);
+    color: white;
+    font-size: large;
+    font-weight: 700;
+    border-width: 0px;
+  }
 
-.btn:active {
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
-}
+  .btn:active {
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
 
-.btn:hover {
-  background-color: rgb(67, 67, 250);
-}
+  .btn:hover {
+    background-color: rgb(67, 67, 250);
+  }
 
+  .trash {
+    background-color: rgb(250, 171, 171);
+    padding: 1rem;
+  }
+  
+  .trash:hover, .delete-all:hover {
+    background-color: rgb(250, 81, 81);
+  }
+  
+  .btn:active {
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
+  
+  .edit {
+    background-color: rgb(204, 152, 252);
+    padding: 1rem;
+  }
+  
+  .edit:hover {
+    background-color: rgb(176, 92, 255);
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
+  }
+  
+  .delete-all {
+    background-color: rgb(250, 171, 171);
+  }
+
+/* Bookmark list styling */
 .bookmark-container {
   display: flex;
   justify-content: center;
@@ -98,91 +127,69 @@ input:focus {
   flex-direction: column;
   align-items: center;
   animation: 1s ease-out 0s 1 slideInLeft;
+  animation-iteration-count: 1
 }
 
-.link-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2rem 0rem;
-  border: 3px solid rgb(189, 189, 189);
-  border-radius: 50px;
-  width: 80vw;
-  box-shadow: 0px 10px 15px -3px rgb(146, 145, 145);
-  max-width: 800px;
-  padding: 1rem;
-}
+/* Individual bookmark styling */
+  .link-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0rem;
+    border: 3px solid rgb(189, 189, 189);
+    border-radius: 50px;
+    width: 80vw;
+    box-shadow: 0px 10px 15px -3px rgb(146, 145, 145);
+    max-width: 800px;
+    padding: 1rem;
+    background-color: white;
+  }
 
-.load {
-  animation: 1s ease-out 0s 1 slideInTop;
-}
+  .load {
+    animation: 1s ease-out 0s 1 slideInTop;
+  }
 
-.link-info-container {
-  display: flex;
-  align-content: center;
-  gap: 3rem;
-  margin-left: 2rem;
-}
+  .link-info-container {
+    display: flex;
+    align-content: center;
+    gap: 3rem;
+    margin-left: 2rem;
+  }
 
-.grow { 
-  transition: all .2s ease-in-out; 
+  .grow { 
+    transition: all .2s ease-in-out; 
   }
   
-.grow:hover { 
-transform: scale(1.1); 
-}
+  .grow:hover { 
+  transform: scale(1.1); 
+  }
 
-.link-title {
-  display: flex;
-  gap: 3rem;
-  text-decoration: none;
-  pointer-events: painted;
-  font-weight: 600;
-  font-size: x-large;
-  color: rgb(71, 71, 71);
-}
+  .link-title {
+    display: flex;
+    gap: 3rem;
+    text-decoration: none;
+    pointer-events: painted;
+    font-weight: 600;
+    font-size: x-large;
+    color: rgb(71, 71, 71);
+  }
 
-.link-title:hover {
-  color: rgb(67, 67, 250)
-}
+  .link-title:hover {
+    color: rgb(67, 67, 250)
+  }
 
-.edit-delete-container {
-  margin-right: 2rem;
-  display: flex;
-  gap: 1rem;
-}
+  .edit-delete-container {
+    margin-right: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
 
-.trash {
-  background-color: rgb(250, 171, 171);
-  padding: 1rem;
-}
+  .edit-container {
+    scale: 1.1;
+  }
 
-.trash:hover, .delete-all:hover {
-  background-color: rgb(250, 81, 81);
-}
 
-.btn:active {
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
-}
-
-.edit {
-  background-color: rgb(204, 152, 252);
-  padding: 1rem;
-}
-
-.edit:hover {
-  background-color: rgb(176, 92, 255);
-  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.3);
-}
-
-.delete-all {
-  background-color: rgb(250, 171, 171);
-}
-
-.edit-container {
-  scale: 1.1;
-}
-
+/* Animation */
 @keyframes slideInLeft {
   0% {
     transform: translateX(-200%);
