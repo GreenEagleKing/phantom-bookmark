@@ -7,6 +7,7 @@ import BookmarkList from './Components/BookmarkList'
 
 function App() {
   const [links, setLinks] = useState([])
+  const [editedLink, setEditedLink] = useState(null)
 
   // Add new link to link state array
   function addLink(link) {
@@ -29,14 +30,36 @@ function App() {
     if (confirm("Do you really want to delete all bookmarks?")) {
       setLinks(prevState => prevState = []);
     }
-    
+  }
+
+  // Update individual links
+  function updateLink(link) {
+    console.log(link)
+    setLinks(prevState => prevState.map(linkItem => {
+      return linkItem.id === link.id ? {...linkItem, title: link.title, url: link.url} : linkItem
+    }) )
+    setEditedLink(null)
+  }
+
+  // Passing in selected link to be edited and updated
+  function enterEditMode(link) {
+    setEditedLink(link.id)
   }
   
   return (
     <div className="App">
       <Header />
-      <AddBookmark addLink={addLink} />
-      <BookmarkList links={links} deleteLink={deleteLink} deleteAll={deleteAll}/>
+      <AddBookmark 
+        addLink={addLink} 
+      />
+      <BookmarkList 
+        links={links}
+        deleteLink={deleteLink}
+        deleteAll={deleteAll}
+        enterEditMode={enterEditMode}
+        editedLink={editedLink}
+        updateLink={updateLink}
+      />
     </div>
   )
 }
