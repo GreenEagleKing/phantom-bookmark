@@ -15,7 +15,7 @@ export default function Bookmark({ link, deleteLink, enterEditMode, editedLink, 
             {editedLink === link.id ? 
             <UpdateBookmark link={link} updateLink={updateLink}/> :
             // if it is not the same show normal bookmark
-            <div className='link-container grow'>
+            <div className='link-container grow load'>
                 <div className='link-info-container '>
                 {/* bookmark title wrapped in a link tag */}
                     <a href={link.url} target='_blank' className='link-title'>

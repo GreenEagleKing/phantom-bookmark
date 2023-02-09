@@ -27,7 +27,7 @@ h1 {
   padding: 2rem;
   margin-bottom: 3rem;
   box-shadow: 0px 15px 20px -15px rgb(146, 145, 145);
-  height: 20%;  
+  height: 20%;
 }
 
 /* Add Bookmark component */
@@ -97,6 +97,7 @@ input:focus {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  animation: 1s ease-out 0s 1 slideInLeft;
 }
 
 .link-container {
@@ -110,6 +111,10 @@ input:focus {
   box-shadow: 0px 10px 15px -3px rgb(146, 145, 145);
   max-width: 800px;
   padding: 1rem;
+}
+
+.load {
+  animation: 1s ease-out 0s 1 slideInTop;
 }
 
 .link-info-container {
@@ -176,4 +181,22 @@ transform: scale(1.1);
 
 .edit-container {
   scale: 1.1;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
