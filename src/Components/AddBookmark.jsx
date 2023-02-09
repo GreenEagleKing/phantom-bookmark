@@ -16,13 +16,13 @@ export default function AddBookmark({ addLink }) {
             title: linkTitle,
             url: linkUrl,
             id: Date.now(),
-            icon: '#'
+            icon: `http://www.google.com/s2/favicons?domain=${linkUrl}`
           })
     }
 
   return (
     <div>
-         <div className='addBookmark-container'>
+         <div className='addBookmark-container grow'>
             <form onSubmit={handleFormSubmit}>
                 <div className='form'>
                     <input type='text' className='input'  value={linkTitle} placeholder='Name' onChange={e => setLinkTitle(e.target.value)} ></input>
